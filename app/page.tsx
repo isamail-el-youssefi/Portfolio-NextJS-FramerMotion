@@ -1,5 +1,6 @@
 import About from "@/components/about";
 import Intro from "@/components/intro";
+import Projects from "@/components/projects";
 import SectioDevider from "@/components/section-devider";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Intro />
       <SectioDevider />
       <About />
+      <Projects />
     </main>
   );
 }
