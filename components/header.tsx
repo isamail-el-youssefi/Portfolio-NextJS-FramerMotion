@@ -20,7 +20,7 @@ export default function Header() {
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.08 }}
               className="h-3/4 flex justify-center items-center"
             >
               <Link
