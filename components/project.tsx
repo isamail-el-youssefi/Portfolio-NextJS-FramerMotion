@@ -18,7 +18,7 @@ export const Project = ({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  // useTransform we add it here so that the initial 
+  // useTransform we add it here so that the initial
   // of the usescroll (opacity, scale) starting from 0
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
@@ -26,9 +26,9 @@ export const Project = ({
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="mb-3 sm:mb-8 last:mb-0"
+      className=" group mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="group bg-gray-100 max-w-[43rem] border border-black/5 overflow-hidden sm:pr-8 relative sm:h-[20rem]  hover:bg-gray-200/70 hover:shadow-md transition">
+      <section className=" bg-gray-100 max-w-[43rem] rounded-xl border border-black/5 overflow-hidden sm:pr-8 relative sm:h-[20rem]  hover:bg-gray-200/70 hover:shadow-md transition">
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full group-even:ml-[21.3rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700">{description}</p>

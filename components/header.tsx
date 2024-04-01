@@ -1,10 +1,14 @@
 "use client";
 
 import { links } from "@/lib/data";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [activeSelection, setActiveSelection] = useState("Home");
+
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -21,13 +25,21 @@ export default function Header() {
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.08 }}
-              className="h-3/4 flex justify-center items-center"
+              className="h-3/4 flex justify-center items-center relative"
             >
               <Link
+                className={clsx(
+                  "flex w-full items-center justify-center px-3 sm:px-2 py-3 hover:text-gray-950 transition",
+                  { "text-gray-950": activeSelection === link.name }
+                )}
                 href={link.hash}
-                className="flex w-full items-center justify-center px-3 sm:px-2 py-3 hover:text-gray-950 transition"
+                onClick={() => setActiveSelection(link.name)}
               >
                 {link.name}
+
+                {link.name === activeSelection && (
+                  <span className="bg-gray-100 rounded-full absolute inset-0 -z-10"></span>
+                )}
               </Link>
             </motion.li>
           ))}
