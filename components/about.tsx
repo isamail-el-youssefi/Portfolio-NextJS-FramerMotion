@@ -1,8 +1,26 @@
+"use client";
+
+import { useInView } from "react-intersection-observer";
 import SectionHeading from "./section-heading";
+import { useContext, useEffect } from "react";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function About() {
+  const { ref, inView } = useInView();
+  const { setActiveSelection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSelection("About");
+    }
+  }, [inView, setActiveSelection]);
+
   return (
-    <section id="about" className="scroll-mt-28 mb-28 max-w-[45rem] text-center leading-8 sm:mb-40">
+    <section
+      ref={ref}
+      id="about"
+      className="scroll-mt-28 mb-28 max-w-[45rem] text-center leading-8 sm:mb-40"
+    >
       <SectionHeading>About me</SectionHeading>{" "}
       <p className="mb-3">
         After graduating with a degree in{" "}

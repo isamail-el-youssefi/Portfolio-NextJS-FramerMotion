@@ -1,12 +1,26 @@
+"use client";
+
 import { projectsData } from "@/lib/data";
 import SectionHeading from "./section-heading";
-import React from "react";
-import Image from "next/image";
+import React, { useEffect } from "react";
 import { Project } from "./project";
+import { useInView } from "react-intersection-observer";
+import {
+  useActiveSectionContext,
+} from "@/context/active-section-context";
 
 export default function Projects() {
+  const { ref, inView } = useInView();
+  const { setActiveSelection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSelection("Projects");
+    }
+  }, [inView, setActiveSelection]);
+
   return (
-    <section id="projects" className="scroll-mt-28">
+    <section ref={ref} id="projects" className="scroll-mt-28">
       <SectionHeading>my projects</SectionHeading>
       <div>
         {projectsData.map((projects, i) => (
@@ -18,6 +32,3 @@ export default function Projects() {
     </section>
   );
 }
-
-
-
