@@ -8,16 +8,19 @@ import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Projects() {
+  //  const { ref } = useSectionInView("Projects", 0.5);
+  // i can just do custome hook above but i want to leave this like that 
+  // sp that i remember why i did the refactoring
   const { ref, inView } = useInView({
-    threshold: 0.50,
+    threshold: 0.5,
   });
-  const { setActiveSelection } = useActiveSectionContext();
+  const { setActiveSelection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSelection("Projects");
     }
-  }, [inView, setActiveSelection]);
+  }, [inView, setActiveSelection, timeOfLastClick]);
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28">

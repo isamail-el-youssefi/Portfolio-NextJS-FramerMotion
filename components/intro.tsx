@@ -1,26 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { useInView } from "react-intersection-observer";
+import useSectionInView from "@/hooks/hooks";
 
 export default function Intro() {
-  const { ref, inView } = useInView({
-    threshold: 0.65,
-  });
-  const { setActiveSelection } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView) {
-      setActiveSelection("Home");
-    }
-  }, [inView, setActiveSelection]);
+  const { ref } = useSectionInView("Home", 0.65);
 
   return (
     <section

@@ -11,7 +11,8 @@ import Link from "next/link";
 import { useContext } from "react";
 
 export default function Header() {
-  const { setActiveSelection, activeSelection } = useActiveSectionContext();
+  const { setActiveSelection, activeSelection, setTimeOfLastClick } =
+    useActiveSectionContext();
 
   return (
     <header className="z-[999] relative">
@@ -37,7 +38,10 @@ export default function Header() {
                   { "text-gray-950": activeSelection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSelection(link.name)}
+                onClick={() => {
+                  setActiveSelection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
 
