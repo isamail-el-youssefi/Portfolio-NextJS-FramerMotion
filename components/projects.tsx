@@ -9,7 +9,7 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Projects() {
   //  const { ref } = useSectionInView("Projects", 0.5);
-  // i can just do custome hook above but i want to leave this like that 
+  // i can just do custome hook above but i want to leave this like that
   // sp that i remember why i did the refactoring
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -23,7 +23,7 @@ export default function Projects() {
   }, [inView, setActiveSelection, timeOfLastClick]);
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28">
+    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
       <SectionHeading>my projects</SectionHeading>
       <div>
         {projectsData.map((projects, i) => (

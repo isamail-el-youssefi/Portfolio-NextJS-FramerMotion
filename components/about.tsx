@@ -1,9 +1,6 @@
 "use client";
 
-import { useInView } from "react-intersection-observer";
 import SectionHeading from "./section-heading";
-import { useContext, useEffect } from "react";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import useSectionInView from "@/hooks/hooks";
 
 export default function About() {
