@@ -1,13 +1,14 @@
 "use client";
 
+import { activeSectionContext } from "@/context/active-section-context";
 import { links } from "@/lib/data";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext } from "react";
 
 export default function Header() {
-  const [activeSelection, setActiveSelection] = useState("Home");
+  const context = useContext(activeSectionContext);
 
   return (
     <header className="z-[999] relative">
@@ -30,15 +31,19 @@ export default function Header() {
               <Link
                 className={clsx(
                   "flex w-full items-center justify-center px-3 sm:px-2 py-3 hover:text-gray-950 transition",
-                  { "text-gray-950": activeSelection === link.name }
+                  { "text-gray-950": context?.activeSelection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSelection(link.name)}
+                onClick={() => context?.setActiveSelection(link.name)}
               >
                 {link.name}
 
-                {link.name === activeSelection && (
-                  <span className="bg-gray-100 rounded-full absolute inset-0 -z-10"></span>
+                {link.name === context?.activeSelection && (
+                  <motion.span
+                    layoutId="activeSelection"
+                    transition={{ type: "spring", stiffness: 480, damping: 30 }}
+                    className="bg-[#dbd7fb]/50   blur-sm rounded-full absolute inset-0 -z-10"
+                  ></motion.span>
                 )}
               </Link>
             </motion.li>
