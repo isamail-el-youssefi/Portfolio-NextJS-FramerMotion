@@ -19,5 +19,5 @@ export default function useSectionInView(
       setActiveSelection(sectionname);
     }
   }, [inView, setActiveSelection, sectionname]);
-  return { ref };
+  return { ref, inView };
 }
