@@ -18,8 +18,9 @@ export const sendEmail = async (formData: FormData) => {
     return "Invalid form data";
   }
 
+  let data;
   try {
-    await resend.emails.send({
+    data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "elyoussefiismail18@gmail.com",
       subject: "Ismail El Youssefi",
@@ -28,6 +29,8 @@ export const sendEmail = async (formData: FormData) => {
       reply_to: senderEmail,
     });
   } catch (error: unknown) {
-    if (error instanceof Error) return { error: error.message };
+    return { error };
   }
+
+  return { data };
 };
