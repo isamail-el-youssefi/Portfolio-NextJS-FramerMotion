@@ -7,9 +7,11 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import useSectionInView from "@/hooks/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.65);
+  const { setActiveSelection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
@@ -78,6 +80,10 @@ export default function Intro() {
       >
         <Link
           href="#contact"
+          onClick={() => {
+            setActiveSelection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-100 transition"
         >
           Contact me here{" "}
@@ -85,12 +91,12 @@ export default function Intro() {
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-100 transition cursor-pointer borderBlack "
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none transition duration-300 cursor-pointer borderBlack "
           href="/CV.pdf"
           download
         >
           Download CV{" "}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
+          <HiDownload className=" opacity-75 transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-95 group-focus:opacity-0 group-focus:translate-y-3 group-focus:scale-125 " />
         </a>
 
         <a

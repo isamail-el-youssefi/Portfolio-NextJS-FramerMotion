@@ -8,7 +8,6 @@ import { links } from "@/lib/data";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useContext } from "react";
 
 export default function Header() {
   const { setActiveSelection, activeSelection, setTimeOfLastClick } =

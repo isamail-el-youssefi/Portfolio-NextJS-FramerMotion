@@ -12,12 +12,12 @@ export default function useSectionInView(
   const { ref, inView } = useInView({
     threshold: threshold,
   });
-  const { setActiveSelection } = useActiveSectionContext();
+  const { setActiveSelection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSelection(sectionname);
     }
-  }, [inView, setActiveSelection, sectionname]);
-  return { ref, inView };
+  }, [inView, setActiveSelection, timeOfLastClick, sectionname]);
+  return { ref };
 }
