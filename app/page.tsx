@@ -6,6 +6,7 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectioDevider from "@/components/section-devider";
 import Skills from "@/components/skills";
+import { Toaster } from "sonner";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Contact />
+      <Toaster position="bottom-right" />
     </main>
   );
 }
