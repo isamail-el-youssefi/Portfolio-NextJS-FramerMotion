@@ -15,5 +15,5 @@ module.exports = {
     },
   },
   plugins: [],
-  darkMode: "class",
+  darkMode: "class", // for adding dark manualy in the theme-switcher component
 };

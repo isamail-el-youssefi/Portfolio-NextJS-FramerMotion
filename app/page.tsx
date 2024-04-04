@@ -17,6 +17,7 @@ export default function Home() {
       <Projects />
       <Skills />
       <Experience />
+      <SectioDevider />
       <Contact />
       <Toaster position="bottom-right" />
     </main>
