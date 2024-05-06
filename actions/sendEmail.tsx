@@ -14,9 +14,8 @@ export const sendEmail = async (formData: FormData) => {
     (!message && !senderEmail) ||
     typeof message !== "string" ||
     typeof senderEmail !== "string"
-  ) {
+  )
     return "Invalid form data";
-  }
 
   let data;
   try {

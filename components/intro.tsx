@@ -31,7 +31,7 @@ export default function Intro() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+              src="/me.jpg"
               alt="Ricardo portrait"
               width="192"
               height="192"
@@ -63,10 +63,10 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.25 }}
       >
-        <span className="font-bold">Hello, I{`'`}m Ricardo.</span> I'm a{" "}
+        <span className="font-bold">Hello, I{`'`}m Ismail.</span> I'm a{" "}
         <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
+        <span className="font-bold"></span> of experience. I enjoy building{" "}
+        <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
       </motion.h1>
 
@@ -84,36 +84,37 @@ export default function Intro() {
             setActiveSelection("Contact");
             setTimeOfLastClick(Date.now());
           }}
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-100 transition"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none hover:shadow-lg hover:shadow-black/[0.23]  transition-all duration-300 "
         >
           Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <BsArrowRight className="opacity-75 transition-all duration-300 group-hover:translate-x-2 group-hover:scale-95 group-focus:opacity-0 group-focus:translate-x-3 group-focus:scale-125 " />
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none transition duration-300 cursor-pointer bordre border-black/10 dark:bg-white/10"
-          href="/CV.pdf"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none  cursor-pointer bordre hover:shadow-lg hover:shadow-black/[0.12]  transition-all duration-300 border-black/10 dark:bg-white/10"
+          href="/ISMAIL-ELYOUSSEFI-RESUME.pdf"
           download
         >
           Download CV{" "}
           <HiDownload className=" opacity-75 transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-95 group-focus:opacity-0 group-focus:translate-y-3 group-focus:scale-125 " />
         </a>
 
-        <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60 "
-          href="https://linkedin.com"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60 "
-          href="https://github.com"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
+        <div className="flex flex-row gap-2 ">
+          <a
+            className="group bg-white p-[1.31rem] text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full  cursor-pointer border hover:shadow-lg hover:shadow-black/[0.12]  transition-all duration-300 border-black/10 dark:bg-white/10 dark:text-white/60 "
+            href="https://www.linkedin.com/in/ismail-el-youssefi/"
+            target="_blank"
+          >
+            <BsLinkedin className="group-hover:text-gray-950 group-hover:scale-[1.18] group-active:scale-105 transition-all duration-300" />
+          </a>
+          <a
+            className="group bg-white p-[1.31rem] text-gray-700 flex items-center gap-2 text-[1.47rem] rounded-full  cursor-pointer border hover:shadow-lg hover:shadow-black/[0.12]  transition-all duration-300 border-black/10 dark:bg-white/10 dark:text-white/60 "
+            href="https://github.com/isamail-el-youssefi"
+            target="_blank"
+          >
+            <FaGithubSquare className="group-hover:text-gray-950 group-hover:scale-[1.18] group-active:scale-105 transition-all duration-300" />
+          </a>
+        </div>
       </motion.div>
     </section>
   );

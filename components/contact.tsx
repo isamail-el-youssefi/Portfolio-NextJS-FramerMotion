@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import useSectionInView from "@/hooks/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
-import { Toaster, toast } from "sonner";
+import {  toast } from "sonner";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 1);
@@ -22,8 +22,8 @@ export default function Contact() {
       <SectionHeading>contact me</SectionHeading>
       <p className="text-gray-700 -mt-5 dark:text-white/80">
         Please contact me at{" "}
-        <a className="underline" href="mailto:example@gmail.com">
-          example@gmail.com
+        <a className="underline" href="mailto:elyoussefiismail18@gmail.com">
+        elyoussefiismail18@gmail.com
         </a>{" "}
         or through this form.
       </p>
