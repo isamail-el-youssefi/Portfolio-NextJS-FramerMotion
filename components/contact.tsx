@@ -29,7 +29,7 @@ export default function Contact() {
       </p>
       <form
         action={async (formData) => {
-          const { data, error }: any = await sendEmail(formData);
+          const { data, error } = await sendEmail(formData);
           if (error) {
             toast.warning("Something went wrong");
             return;

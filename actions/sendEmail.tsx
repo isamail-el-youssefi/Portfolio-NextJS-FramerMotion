@@ -5,7 +5,9 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendEmail = async (formData: FormData) => {
+export const sendEmail = async (
+  formData: FormData
+): Promise<{ data?: any; error?: any }> => {
   const message = formData.get("message");
   const senderEmail = formData.get("email");
 
@@ -15,7 +17,7 @@ export const sendEmail = async (formData: FormData) => {
     typeof message !== "string" ||
     typeof senderEmail !== "string"
   )
-    return "Invalid form data";
+    return { error: "Invalid form data" };
 
   let data;
   try {
