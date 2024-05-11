@@ -2,8 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaLink, FaReact } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
+import travel from "@/public/travel.png";
+import petcare from "@/public/petcare.png";
+import evento from "@/public/evento.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import { BsGithub } from "react-icons/bs";
 import { Link2 } from "lucide-react";
@@ -64,44 +65,36 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Petcare Organizer",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte",
+    tags: [
+      "Next.js",
+      "Tailwind",
+      "TypeScript",
+      "Prisma",
+      "NextAuth",
+      "Jwt",
+      "Zod",
+      "Shadcn UI",
+    ],
     icons: [
       {
         iconsLogo: React.createElement(BsGithub),
-        link: "https://github.com/juan-gutierrez-dev/word-analytics",
+        link: "https://github.com/isamail-el-youssefi/petorganizer",
       },
       {
         iconsLogo: React.createElement(FaLink),
-        link: "https://word-analytics.vercel.app/",
+        link: "https://petorganizer-liard.vercel.app",
       },
     ],
-    imageUrl: corpcommentImg,
+    imageUrl: petcare,
   },
   {
-    title: "rmtDev",
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    icons: [
-      {
-        iconsLogo: React.createElement(BsGithub),
-        link: "https://github.com/juan-gutierrez-dev/word-analytics",
-      },
-      {
-        iconsLogo: React.createElement(FaLink),
-        link: "https://word-analytics.vercel.app/",
-      },
-    ],
-    imageUrl: rmtdevImg,
-  },
-  {
-    title: "Word Analytics",
+    title: "Word Stats",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    tags: ["React", "Css"],
     icons: [
       {
         iconsLogo: React.createElement(BsGithub),
@@ -113,6 +106,40 @@ export const projectsData = [
       },
     ],
     imageUrl: wordanalyticsImg,
+  },
+  {
+    title: "Evento",
+    description:
+      "Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Prisma"],
+    icons: [
+      {
+        iconsLogo: React.createElement(BsGithub),
+        link: "https://github.com/isamail-el-youssefi/Events-Around-You",
+      },
+      {
+        iconsLogo: React.createElement(FaLink),
+        link: "https://events-around-you.vercel.app/",
+      },
+    ],
+    imageUrl: evento,
+  },
+  {
+    title: "Travel Bag",
+    description:
+      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+    tags: ["React", "Css"],
+    icons: [
+      {
+        iconsLogo: React.createElement(BsGithub),
+        link: "https://github.com/isamail-el-youssefi/Travel-Bag",
+      },
+      {
+        iconsLogo: React.createElement(FaLink),
+        link: "https://holiday-bag.vercel.app/",
+      },
+    ],
+    imageUrl: travel,
   },
 ] as const;
 
@@ -129,11 +156,7 @@ export const skillsData = [
   "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
   "Framer Motion",
+  "Adobe Apps",
 ] as const;

@@ -17,7 +17,7 @@ export default function Contact() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.1 }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
     >
       <SectionHeading>contact me</SectionHeading>
       <p className="text-gray-700 -mt-5 dark:text-white/80">
